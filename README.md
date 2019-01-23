@@ -8,5 +8,5 @@ Curly braces ({}) indicate optional characters. IE the rule will work with or wi
 RewriteRule ^about/?$ https://domain.com/about-us [L,R=301]
 
 # Redirects a URL such as http{s}://domain.com/how/this-bit-stays-the-same/ to https://domain.com/what/this-bit-stays-the-same/
-RewriteRule ^how/?(.*)$ https://domain.com/what/$1/
+RewriteRule ^how/?(.*)$ https://domain.com/what/$1/ [L,R=301]
 ```
