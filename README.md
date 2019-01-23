@@ -1,4 +1,4 @@
-# redirect-recipes
+# .htaccess 301 Redirect Recipes
 A recipe book of useful 301 redirects for use within an Apache .htaccess file
 
 Curly braces ({}) indicate optional characters. IE the rule will work with or without these characters.
