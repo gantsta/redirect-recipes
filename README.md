@@ -12,4 +12,8 @@ RewriteRule ^about/?$ https://domain.com/about-us [L,R=301]
 # Redirects a URL such as http{s}://domain.com/how/this-bit-stays-the-same/ to https://domain.com/what/this-bit-stays-the-same/
 # Also handles the redirection of the parent directory so will redirect domain.com/how/ to domain.com/what/
 RewriteRule ^how/?(.*)$ https://domain.com/what/$1/ [L,R=301]
+
+# Redirect domain URLs (with or without a trailing slash) to the same URL on a new domain
+RewriteCond %{REQUEST_URI} ^(.*)([^/]+)/?$
+RewriteRule ^ https://newdomain.com%1%2 [L,R=301]
 ```
