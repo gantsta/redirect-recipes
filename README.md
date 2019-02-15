@@ -17,4 +17,7 @@ RewriteRule ^how/?(.*)$ https://domain.com/what/$1/ [L,R=301]
 # This should probably be the last redirect rule that runs
 RewriteCond %{REQUEST_URI} ^(.*)([^/]+)/?$
 RewriteRule ^ https://newdomain.com%1%2 [L,R=301]
+
+# NB: You can add the following, secondary Rewrite Condition to the above rule to exclude some URLs from being redirected.
+RewriteCond %{REQUEST_URI} !^/privacy-policy/?
 ```
