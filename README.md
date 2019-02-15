@@ -15,6 +15,7 @@ RewriteRule ^how/?(.*)$ https://domain.com/what/$1/ [L,R=301]
 
 # Redirect domain URLs (with or without a trailing slash) to the same URL on a new domain
 # This should probably be the last redirect rule that runs
+# Yeah, this one needs some more testing
 RewriteCond %{REQUEST_URI} ^(.*)([^/]+)/?$
 RewriteRule ^ https://newdomain.com%1%2 [L,R=301]
 
