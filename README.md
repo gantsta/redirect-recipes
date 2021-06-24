@@ -23,4 +23,16 @@ RewriteRule ^ https://newdomain.com%1%2 [L,R=301]
 
 # NB: You can add the following, secondary Rewrite Condition to the above rule to exclude some URLs from being redirected.
 RewriteCond %{REQUEST_URI} !^/privacy-policy/?
+
+# Redirect any domains that point to the site to their https:// and www. equivalents
+# Props to https://wpjohnny.com/301-redirects-to-https-with-and-without-www/
+# BEGIN Redirects
+RewriteEngine On
+# 301 redirect to www
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# 301 redirect to https
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# END Redirects
 ```
